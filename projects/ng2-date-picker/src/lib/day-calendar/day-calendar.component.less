@@ -1,0 +1,105 @@
+@import '../common/styles/variables';
+
+& {
+  dp-day-calendar {
+    display: inline-block;
+
+    .dp-day-calendar-container {
+      background: @c-white;
+    }
+
+    .dp-calendar-wrapper {
+      box-sizing: border-box;
+      border: none;//1px solid @c-black;
+
+      .dp-calendar-weekday:first-child {
+        border-left: none;
+      }
+    }
+
+    .dp-weekdays {
+      font-size: 15px;
+    }
+
+    .dp-calendar-weekday {
+      box-sizing: border-box;
+      display: inline-block;
+      width: @basic-height;
+      text-align: center;
+      border-left: 1px solid @c-black;
+      border-bottom: 1px solid @c-black;
+    }
+    
+
+    .dp-calendar-day {
+      box-sizing: border-box;
+      width: 33px;
+      height: 33px;
+      cursor: pointer;
+    }
+
+    .dp-selected {
+      background: rgba(0, 113, 169, .12);
+      color: #0071a9;
+    }
+
+    .dp-prev-month, .dp-next-month {
+      opacity: 0.5;
+    }
+
+    .dp-hide-near-month {
+      .dp-prev-month, .dp-next-month {
+        visibility: hidden;
+      }
+    }
+
+    .dp-week-number {
+      position: absolute;
+      font-size: 9px;
+    }
+
+    &.dp-material {
+
+      .dp-calendar-weekday {
+        height: 33px;//@basic-height - 5px;
+        width: 33px;
+        line-height: 33px;
+        font-size: 0.85rem;
+        color: darken(@c-light-gray, 40%);
+        border: none;
+      }
+
+      .dp-calendar-wrapper {
+        border: none;//1px solid @c-light-gray;
+        padding: 0px 14px 14px 14px;
+      }
+
+      .dp-calendar-month,
+      .dp-calendar-day {
+        box-sizing: border-box;
+        background: @c-white;
+        border-radius: 6px;
+        border: none;
+        outline: none;
+
+        &:hover {
+          background: @c-light-gray;
+        }
+      }
+
+      .dp-selected {
+        background: #0071a9;
+        color: #fff;
+
+        &:hover {
+          background: rgba(0, 113, 169, .12);
+        }
+      }
+
+      .dp-current-day {
+        background: rgba(0, 113, 169, .12);
+        color: #0071a9;
+      }
+    }
+  }
+}
